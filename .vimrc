@@ -18,7 +18,7 @@ Plugin 'unblevable/quick-scope'
 Plugin 'matze/vim-move'
 Plugin 'rhysd/open-pdf.vim'
 "commented out due to needing additional dependencies
-"Plugin 'valloric/youcompleteme'
+Plugin 'valloric/youcompleteme'
 Plugin 'francoiscabrol/ranger.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'pangloss/vim-javascript'
@@ -117,5 +117,5 @@ set <M-a>=^[a
 let g:pdf_convert_on_edit=1
 "configuration for ranger and youcompleteme
 let g:ranger_replace_netrw = 1 " open ranger when vim open a directory
-"let g:ycm_key_list_select_completion=['<C-J>','<Down>']
-"let g:ycm_key_list_previous_completion=['<C-K>','<Up>']
+let g:ycm_key_list_select_completion=['<C-J>','<Down>']
+let g:ycm_key_list_previous_completion=['<C-K>','<Up>']
