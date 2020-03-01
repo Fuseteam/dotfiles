@@ -115,6 +115,11 @@ let g:move_key_modifier ='C'
 set t_Co=256
 set <M-a>=^[a
 let g:pdf_convert_on_edit=1
+"netrw config
+let g:netrw_banner = 0
+let g:netrw_liststyle = 3
+let g:netrw_browse_split = 4
+let g:netrw_winsize = 20
 "configuration for ranger and youcompleteme
 let g:ranger_replace_netrw = 1 " open ranger when vim open a directory
 "let g:ycm_key_list_select_completion=['<C-J>','<Down>']
