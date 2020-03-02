@@ -82,11 +82,24 @@ map <F5> :!php -l %<CR>
 map <F8> gggqG :Lp <CR>
 map <F9> gggqG :Elp <CR>
 nnoremap <silent> <F4> :let _s=@/ <Bar> :%s/\s\+$//e <Bar> :let @/=_s <Bar> :nohl <Bar> :unlet _s <CR>
+"for trimming vim-move from plugins
+"nnoremap <C-j> :m .+1<CR>==
+"nnoremap <C-k> :m .-2<CR>==
+"vnoremap <C-j> :m '>+1<CR>gv=gv
+"vnoremap <C-k> :m '<-2<CR>gv=gv
 
-"maps the esc key to the place were it was on the terminal where vim was
-"originally developed
+"maps the esc key to the place were it was on the terminal
+"where vim was originally developed
 "shift tab still functions as tab
-inoremap <Tab> <Esc>
+nnoremap <Space> <Tab>
+nnoremap <Tab> <Esc>
+vnoremap <Tab> <Esc>gV
+onoremap <Tab> <Esc>
+"cnoremap <Tab> <C-C><Esc>
+inoremap <Tab> <Esc>`^
+nnoremap <Backspace> <C-O>
+nnoremap <Return> <C-I>
+
 "change to working directory
 command! Cwd cd %:p:h
 "windows switching commands
