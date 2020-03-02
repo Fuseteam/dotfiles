@@ -124,10 +124,11 @@ command! Tw :w !sudo tee %
 command! CC call s:cuross()
 command! Elp :w|ha > %.ps | !ps2pdf %.ps && rm %.ps
 command! -nargs=1 Lp let &printheader="%-%<args>"|ha > %.ps | !ps2pdf %.ps && rm %.ps
-"Set the appropiate colorspace for vim-airlines
 let g:move_key_modifier ='C'
+"Set the appropiate colorspace for vim-airlines
 set t_Co=256
-set <M-a>=^[a
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#formatter = 'unique_tail'
 let g:pdf_convert_on_edit=1
 "netrw config
 let g:netrw_banner = 0
