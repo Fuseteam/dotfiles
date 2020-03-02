@@ -136,6 +136,6 @@ let g:netrw_liststyle = 3
 let g:netrw_browse_split = 4
 let g:netrw_winsize = 20
 "configuration for ranger and youcompleteme
-let g:ranger_replace_netrw = 1 " open ranger when vim open a directory
-let g:ycm_key_list_select_completion=['<C-J>','<Down>']
-let g:ycm_key_list_previous_completion=['<C-K>','<Up>']
+"let g:ranger_replace_netrw = 1 " open ranger when vim open a directory
+"let g:ycm_key_list_select_completion=['<C-J>','<Down>']
+"let g:ycm_key_list_previous_completion=['<C-K>','<Up>']
