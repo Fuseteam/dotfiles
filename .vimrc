@@ -78,7 +78,7 @@ set printfont=Ariel:h12
 set printheader=%<%f%h%m%
 "checks for php syntax errors
 map <F2> :%s/\s\+$//e<CR>
-map <F5> :!php -l %<CR>
+map <F5> :w !sudo tee %<CR>
 map <F8> gggqG :Lp <CR>
 map <F9> gggqG :Elp <CR>
 nnoremap <silent> <F4> :let _s=@/ <Bar> :%s/\s\+$//e <Bar> :let @/=_s <Bar> :nohl <Bar> :unlet _s <CR>
@@ -121,6 +121,8 @@ endfunction
 
 command! -nargs=+ W call s:winswitch(<f-args>)
 command! Tw :w !sudo tee %
+command! Php :!php -l %<CR>
+"command! Tq :w !sudo tee %<CR>L<CR>:q
 command! CC call s:cuross()
 command! Elp :w|ha > %.ps | !ps2pdf %.ps && rm %.ps
 command! -nargs=1 Lp let &printheader="%-%<args>"|ha > %.ps | !ps2pdf %.ps && rm %.ps
@@ -135,6 +137,11 @@ let g:netrw_banner = 0
 let g:netrw_liststyle = 3
 let g:netrw_browse_split = 4
 let g:netrw_winsize = 20
+let ghregex='\(^\|\s\s\)\zs\.\S\+'
+let g:netrw_list_hide=ghregex
+let g:netrw_fastbrowse = 0
+"au VimEnter * :Lex
+au FileType netrw setl bufhidden=wipe
 "configuration for ranger and youcompleteme
 "let g:ranger_replace_netrw = 1 " open ranger when vim open a directory
 "let g:ycm_key_list_select_completion=['<C-J>','<Down>']
