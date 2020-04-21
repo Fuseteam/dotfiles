@@ -25,6 +25,7 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'pangloss/vim-javascript'
 Plugin 'ap/vim-css-color'
 Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'ervandew/supertab'
 call vundle#end()
 filetype plugin indent on
 " Uncomment the next line to make Vim more Vi-compatible
@@ -76,6 +77,7 @@ set autoindent
 set iskeyword+=-
 set printfont=Ariel:h12
 set printheader=%<%f%h%m%
+
 "checks for php syntax errors
 map <F2> :%s/\s\+$//e<CR>
 map <F5> :w !sudo tee %<CR>
@@ -90,15 +92,28 @@ nnoremap <silent> <F4> :let _s=@/ <Bar> :%s/\s\+$//e <Bar> :let @/=_s <Bar> :noh
 
 "maps the esc key to the place were it was on the terminal
 "where vim was originally developed
-"shift tab still functions as tab
-nnoremap <Space> <Tab>
+"shift tab still functions as tab in insert mode
+set completeopt=menuone,longest
+set wildcharm=<Tab>
+cnoremap <S-Tab> <Tab>
 nnoremap <Tab> <Esc>
 vnoremap <Tab> <Esc>gV
 onoremap <Tab> <Esc>
-"cnoremap <Tab> <C-C><Esc>
-inoremap <Tab> <Esc>`^
+cnoremap <Tab> <C-C><Esc>
+inoremap <expr> <Tab> pumvisible() ? "<C-Y>" : "<Esc>`^"
+inoremap <expr> <C-J> pumvisible() ? "<C-N>" : "<C-J>"
+inoremap <expr> <C-K> pumvisible() ? "<C-P>" : "<C-K>"
+inoremap <expr> <S-Tab> pumvisible() ? "<C-E>" : "<C-P>"
+
+nnoremap <Space> <Tab>
 nnoremap <Backspace> <C-O>
-nnoremap <Return> <C-I>
+
+"supertab config
+let g:SuperTabMappingForward = '<s-tab>'
+let g:SuperTabMappingBackward = '<c-tab>'
+"map buffer navi to + -
+nnoremap - :bp<CR>
+nnoremap + :bn<CR>
 
 "change to working directory
 command! Cwd cd %:p:h
@@ -121,6 +136,7 @@ endfunction
 
 command! -nargs=+ W call s:winswitch(<f-args>)
 command! Tw :w !sudo tee %
+command! Ti :w !sudo tee % && sudo make clean install
 command! Php :!php -l %<CR>
 "command! Tq :w !sudo tee %<CR>L<CR>:q
 command! CC call s:cuross()
