@@ -8,6 +8,7 @@
 " This line should not be removed as it ensures that various options are
 " properly set to work with the Vim-related packages available in Debian.
 runtime! debian.vim
+
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
@@ -75,14 +76,17 @@ set relativenumber
 set autoindent
 "enables syntax highlighting for php
 set iskeyword+=-
+"set print settings
 set printfont=Ariel:h12
 set printheader=%<%f%h%m%
-
-"checks for php syntax errors
-map <F2> :%s/\s\+$//e<CR>
-map <F5> :w !sudo tee %<CR>
+"format dpcument and print to pdf
 map <F8> gggqG :Lp <CR>
 map <F9> gggqG :Elp <CR>
+
+map <F5> :Tw<CR>
+map <F9> :Ti<CR>
+"strip trailing spaces
+map <F2> :%s/\s\+$//e<CR>
 nnoremap <silent> <F4> :let _s=@/ <Bar> :%s/\s\+$//e <Bar> :let @/=_s <Bar> :nohl <Bar> :unlet _s <CR>
 "for trimming vim-move from plugins
 "nnoremap <C-j> :m .+1<CR>==
@@ -100,17 +104,15 @@ nnoremap <Tab> <Esc>
 vnoremap <Tab> <Esc>gV
 onoremap <Tab> <Esc>
 cnoremap <Tab> <C-C><Esc>
-inoremap <expr> <Tab> pumvisible() ? "<C-Y>" : "<Esc>`^"
-inoremap <expr> <C-J> pumvisible() ? "<C-N>" : "<C-J>"
-inoremap <expr> <C-K> pumvisible() ? "<C-P>" : "<C-K>"
-inoremap <expr> <S-Tab> pumvisible() ? "<C-E>" : "<C-P>"
+inoremap <expr> <Tab> pumvisible() ? "<C-E>" : "<Esc>`^"
+inoremap <expr> <S-Tab> pumvisible() ? "<C-Y>" : "<C-P>"
 
 nnoremap <Space> <Tab>
 nnoremap <Backspace> <C-O>
 
 "supertab config
-let g:SuperTabMappingForward = '<s-tab>'
-let g:SuperTabMappingBackward = '<c-tab>'
+let g:SuperTabMappingForward = '<c-j>'
+let g:SuperTabMappingBackward = '<c-k>'
 "map buffer navi to + -
 nnoremap - :bp<CR>
 nnoremap + :bn<CR>
