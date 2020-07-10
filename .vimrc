@@ -106,6 +106,8 @@ onoremap <Tab> <Esc>
 cnoremap <Tab> <C-C><Esc>
 inoremap <expr> <Tab> pumvisible() ? "<C-E>" : "<Esc>`^"
 inoremap <expr> <S-Tab> pumvisible() ? "<C-Y>" : "<C-P>"
+set expandtab
+set shiftwidth=4
 
 nnoremap <Space> <Tab>
 nnoremap <Backspace> <C-O>
@@ -123,11 +125,22 @@ command! Cwd cd %:p:h
 function! s:winswitch(...)
 	let i = 0
 	for arg in a:000
-		let command = ":wincmd ".arg
-		execute command
+		if arg =~ '[A-Za-z_|=]' && arg !~ '[^A-Za-z_|=]'
+			let command = ":wincmd ".arg
+			execute command
+		elseif arg =~'[1-9+-]'
+			let command = ":resize ".arg
+			execute command
+		"elseif arg =~'[1-9+-v]' && arg !~ '[^1-9+-v]'
+			"let command = ":vertical resize ".arg
+			"echo command
+			"execute command
+		endif
 		let i = i + 1
 	endfor
 endfunction
+"use space as the vertical split separating character
+set fillchars+=vert:\ 
 
 function! s:cuross()
 	let command =":set cursorline!"
@@ -140,6 +153,7 @@ command! -nargs=+ W call s:winswitch(<f-args>)
 command! Tw :w !sudo tee %
 command! Ti :w !sudo tee % && sudo make clean install
 command! Php :!php -l %<CR>
+command! Pastebin :!cat %|nc termbin.com 9999
 "command! Tq :w !sudo tee %<CR>L<CR>:q
 command! CC call s:cuross()
 command! Elp :w|ha > %.ps | !ps2pdf %.ps && rm %.ps
@@ -158,6 +172,8 @@ let g:netrw_winsize = 20
 let ghregex='\(^\|\s\s\)\zs\.\S\+'
 let g:netrw_list_hide=ghregex
 let g:netrw_fastbrowse = 0
+"vim term settings
+set termkey=<CR>
 "au VimEnter * :Lex
 au FileType netrw setl bufhidden=wipe
 "configuration for ranger and youcompleteme

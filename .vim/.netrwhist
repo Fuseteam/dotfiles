@@ -1,9 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
-let g:netrw_dirhist_1='/home/fuseteam/keyboard-component/src/lib'
-let g:netrw_dirhist_2='/home/fuseteam/keyboard-component/src'
-let g:netrw_dirhist_3='/home/fuseteam/keyboard-component'
-let g:netrw_dirhist_4='/home/fuseteam/keyboard-component/plugins'
-let g:netrw_dirhist_5='/home/fuseteam/flick'
-let g:netrw_dirhist_6='/usr/local/src'
-let g:netrw_dirhist_7='/usr/local/src/dwm-6.0'
