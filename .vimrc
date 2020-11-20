@@ -174,8 +174,11 @@ let g:netrw_winsize = 20
 let ghregex='\(^\|\s\s\)\zs\.\S\+'
 let g:netrw_list_hide=ghregex
 let g:netrw_fastbrowse = 0
-"vim term settings
-set termkey=<CR>
+"color picker shortcuts
+let g:vcoolor_disable_mappings = 1
+let g:vcoolor_map = '<C-C>'
+let g:vcool_ins_rgb_map = '<C-G>'
+let g:vcool_ins_rgba_map = '<C-W>'
 "au VimEnter * :Lex
 au FileType netrw setl bufhidden=wipe
 "configuration for ranger and youcompleteme
