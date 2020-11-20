@@ -27,6 +27,8 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'ap/vim-css-color'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'ervandew/supertab'
+Plugin 'hail2u/vim-css3-syntax'
+Plugin 'KabbAmine/vCoolor.vim'
 call vundle#end()
 filetype plugin indent on
 " Uncomment the next line to make Vim more Vi-compatible
