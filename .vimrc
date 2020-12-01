@@ -123,20 +123,23 @@ nnoremap + :bn<CR>
 
 "change to working directory
 command! Cwd cd %:p:h
-"windows switching commands
-function! s:winswitch(...)
+"functions to strip strings and numbers
+function! s:chop(string, char)
+    return substitute(a:string, a:char, '', '')
+endfunction
+function! s:chopnumbers(string)
+    return substitute(a:string, '\d*', '', 'g')
+endfunction
+"windows management commands
+function! s:winman(...)
 	let i = 0
 	for arg in a:000
 		if arg =~ '[A-Za-z_|=]' && arg !~ '[^A-Za-z_|=]'
 			let command = ":wincmd ".arg
 			execute command
-		elseif arg =~'[1-9+-]'
-			let command = ":resize ".arg
-			execute command
-		"elseif arg =~'[1-9+-v]' && arg !~ '[^1-9+-v]'
-			"let command = ":vertical resize ".arg
-			"echo command
-			"execute command
+		elseif arg =~'[1-9>+<-]' && s:chopnumbers(arg) != ''
+                        let command = ":".s:chop(arg, s:chopnumbers(arg))."wincmd ".s:chopnumbers(arg)
+                        execute command
 		endif
 		let i = i + 1
 	endfor
@@ -151,7 +154,7 @@ function! s:cuross()
 	execute command
 endfunction
 
-command! -nargs=+ W call s:winswitch(<f-args>)
+command! -nargs=+ W call s:winman(<f-args>)
 command! Tw :w !sudo tee %
 command! Ti :w !sudo tee % && sudo make clean install
 command! Php :!php -l %<CR>
