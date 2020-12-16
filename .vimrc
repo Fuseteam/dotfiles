@@ -113,7 +113,8 @@ set shiftwidth=4
 
 nnoremap <Space> <Tab>
 nnoremap <Backspace> <C-O>
-
+"fix vim colors in a terminal with a dark background
+set background=dark
 "supertab config
 let g:SuperTabMappingForward = '<c-j>'
 let g:SuperTabMappingBackward = '<c-k>'
