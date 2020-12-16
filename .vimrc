@@ -29,6 +29,7 @@ Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'ervandew/supertab'
 Plugin 'hail2u/vim-css3-syntax'
 Plugin 'KabbAmine/vCoolor.vim'
+Plugin 'will133/vim-dirdiff'
 call vundle#end()
 filetype plugin indent on
 " Uncomment the next line to make Vim more Vi-compatible
