@@ -45,7 +45,7 @@ endif
 
 " If using a dark background within the editing area and syntax highlighting
 " turn on this option as well
-"set background=dark
+set background=dark
 
 " Uncomment the following to have Vim jump to the last position when
 " reopening a file
@@ -114,8 +114,6 @@ set shiftwidth=4
 
 nnoremap <Space> <Tab>
 nnoremap <Backspace> <C-O>
-"fix vim colors in a terminal with a dark background
-set background=dark
 "supertab config
 let g:SuperTabMappingForward = '<c-j>'
 let g:SuperTabMappingBackward = '<c-k>'
