@@ -79,6 +79,7 @@ set relativenumber
 set autoindent
 "enables syntax highlighting for php
 set iskeyword+=-
+let php_htmlInStrings=1
 "set print settings
 set printfont=Ariel:h12
 set printheader=%<%f%h%m%
