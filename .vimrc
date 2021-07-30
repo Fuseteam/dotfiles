@@ -83,6 +83,8 @@ set autoindent
 "enables syntax highlighting for php
 set iskeyword+=-
 let php_htmlInStrings=1
+let php_baselib=1
+let php_sql_query=1
 "set print settings
 set printfont=Ariel:h12
 set printheader=%<%f%h%m%
@@ -188,6 +190,8 @@ let g:vcool_ins_rgb_map = '<C-G>'
 let g:vcool_ins_rgba_map = '<C-W>'
 "au VimEnter * :Lex
 au FileType netrw setl bufhidden=wipe
+au BufReadPost *.lib set syntax=php
+au BufReadPost *.php set ft=html|set syntax=php
 "configuration for ranger and youcompleteme
 "let g:ranger_replace_netrw = 1 " open ranger when vim open a directory
 "let g:ycm_key_list_select_completion=['<C-J>','<Down>']
