@@ -46,6 +46,9 @@ endif
 " If using a dark background within the editing area and syntax highlighting
 " turn on this option as well
 set background=dark
+" set utf-8 as the default encoding
+set encoding=utf-8
+set fileencoding=utf-8
 
 " Uncomment the following to have Vim jump to the last position when
 " reopening a file
