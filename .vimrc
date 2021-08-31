@@ -175,7 +175,10 @@ function! s:cuross()
 endfunction
 
 command! -nargs=+ W call s:winman(<f-args>)
-command! Tw :w !sudo tee %
+
+command! Tr :execute ':silent r !sudo cat %' |1d
+command! Tw :execute ':silent w !sudo tee %' |edit!
+command! Tq :execute ':silent w !sudo tee %' |quit!
 command! Ti :w !sudo tee % && sudo make clean install
 command! Php :!php -l %<CR>
 command! Pastebin :!cat %|nc termbin.com 9999
