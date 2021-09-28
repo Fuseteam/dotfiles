@@ -4,6 +4,7 @@
 !.gitignore
 !.vimrc
 !.vim/
+!.vim/repos
 !.vim/bundle/
 !.vim/bundle/*
 !.bash_aliases

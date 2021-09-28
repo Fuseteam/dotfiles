@@ -1,6 +1,6 @@
 dots files for my personal vim config and bash aliases
 
-to install the plugins from the vimrc you can clone [this repo](https://github.com/VundleVim/Vundle.vim) as well
+to install the vim plugins run `git submodule update --init --recursive`
 
 the youcompleteme plugin requires a few dependencies as noted [here](https://vimawesome.com/plugin/youcompleteme)
 

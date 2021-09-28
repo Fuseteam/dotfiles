@@ -1,0 +1,6 @@
+#!/bin/bash
+readarray -t repos < <(awk "/Plugin/{gsub(\"'\",\"\");print \$2}" .vimrc)
+for repo in ${repos[@]}
+do
+    git submodule add https://github.com/${repo} .vim/bundle/${repo#*/}
+done
