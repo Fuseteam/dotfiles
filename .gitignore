@@ -1,9 +1,11 @@
 *
 
-.vim/.netrwhist
+!.gitconfig
 !.gitignore
 !.vimrc
 !.vim/
-!.vim/*
+!.vim/bundle/
+!.vim/bundle/*
 !.bash_aliases
+!.bash_completion
 !.bashrc

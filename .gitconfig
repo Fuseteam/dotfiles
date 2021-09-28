@@ -1,0 +1,5 @@
+[user]
+	email = fusekai@outlook.com
+	name = Fuseteam
+[merge]
+	tool = vimdiff

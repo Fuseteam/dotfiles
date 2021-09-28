@@ -1,0 +1,54 @@
+[submodule ".vim/bundle/Vundle.vim"]
+	path = .vim/bundle/Vundle.vim
+	url = https://github.com/VundleVim/Vundle.vim
+[submodule ".vim/bundle/vim-airline"]
+	path = .vim/bundle/vim-airline
+	url = https://github.com/vim-airline/vim-airline
+[submodule ".vim/bundle/vim-close-pair"]
+	path = .vim/bundle/vim-close-pair
+	url = https://github.com/tranvansang/vim-close-pair
+[submodule ".vim/bundle/vim-move"]
+	path = .vim/bundle/vim-move
+	url = https://github.com/matze/vim-move
+[submodule ".vim/bundle/nerdcommenter"]
+	path = .vim/bundle/nerdcommenter
+	url = https://github.com/scrooloose/nerdcommenter
+[submodule ".vim/bundle/open-pdf.vim"]
+	path = .vim/bundle/open-pdf.vim
+	url = https://github.com/rhysd/open-pdf.vim
+[submodule ".vim/bundle/quick-scope"]
+	path = .vim/bundle/quick-scope
+	url = https://github.com/unblevable/quick-scope
+[submodule ".vim/bundle/vim-qml"]
+	path = .vim/bundle/vim-qml
+	url = https://github.com/peterhoeg/vim-qml
+[submodule ".vim/bundle/vim-fugitive"]
+	path = .vim/bundle/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive
+[submodule ".vim/bundle/youcompleteme"]
+	path = .vim/bundle/youcompleteme
+	url = https://github.com/valloric/youcompleteme
+[submodule ".vim/bundle/ranger.vim"]
+	path = .vim/bundle/ranger.vim
+	url = https://github.com/francoiscabrol/ranger.vim
+[submodule ".vim/bundle/vim-javascript"]
+	path = .vim/bundle/vim-javascript
+	url = https://github.com/pangloss/vim-javascript
+[submodule ".vim/bundle/vim-css-color"]
+	path = .vim/bundle/vim-css-color
+	url = https://github.com/ap/vim-css-color
+[submodule ".vim/bundle/rainbow_parentheses.vim"]
+	path = .vim/bundle/rainbow_parentheses.vim
+	url = https://github.com/kien/rainbow_parentheses.vim
+[submodule ".vim/bundle/supertab"]
+	path = .vim/bundle/supertab
+	url = https://github.com/ervandew/supertab
+[submodule ".vim/bundle/vim-css3-syntax"]
+	path = .vim/bundle/vim-css3-syntax
+	url = https://github.com/hail2u/vim-css3-syntax
+[submodule ".vim/bundle/vCoolor.vim"]
+	path = .vim/bundle/vCoolor.vim
+	url = https://github.com/KabbAmine/vCoolor.vim
+[submodule ".vim/bundle/vim-dirdiff"]
+	path = .vim/bundle/vim-dirdiff
+	url = https://github.com/will133/vim-dirdiff

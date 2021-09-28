@@ -118,7 +118,7 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-export PATH=/home/tk/.scripts/crossbuilder:/home/tk/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+export PATH=/home/tk/.scripts/crossbuilder:/home/tk/.local/bin:$PATH:/snap/bin:/home/tk/Applications
 export PS1=" \t [ \u@\h \W ] \\$\$?> :\[$(tput sgr0)\]"
 
 
