@@ -7,6 +7,8 @@
 !.vim/repos
 !.vim/bundle/
 !.vim/bundle/*
+!.byobu/
+!.byobu/*
 !.bash_aliases
 !.bash_completion
 !.bashrc

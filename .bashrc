@@ -120,7 +120,7 @@ if ! shopt -oq posix; then
 fi
 export PATH=/home/tk/.scripts/crossbuilder:/home/tk/.local/bin:$PATH:/snap/bin:/home/tk/Applications
 export PS1=" \t [ \u@\h \W ] \\$\$?> :\[$(tput sgr0)\]"
-
+export LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libgtk3-nocsd.so.0
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 [ -r /home/tk/.byobu/prompt ] && . /home/tk/.byobu/prompt   #byobu-prompt#
