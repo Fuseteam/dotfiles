@@ -118,7 +118,7 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-export PATH=/home/tk/.scripts/crossbuilder:/home/tk/.local/bin:$PATH:/snap/bin:/home/tk/Applications
+export PATH=/home/tk/.scripts/crossbuilder:$PATH:/home/tk/Applications
 export PS1=" \t [ \u@\h \W ] \\$\$?> :\[$(tput sgr0)\]"
 export LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libgtk3-nocsd.so.0
 
