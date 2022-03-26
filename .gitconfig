@@ -3,3 +3,9 @@
 	name = Fuseteam
 [merge]
 	tool = vimdiff
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false
+[alias]
+	d = difftool
