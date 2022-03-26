@@ -50,6 +50,8 @@ set background=dark
 set encoding=utf-8
 set fileencoding=utf-8
 
+" start in insertmode for git commit messages
+autocmd FileType gitcommit startinsert!
 " Uncomment the following to have Vim jump to the last position when
 " reopening a file
 "if has("autocmd")
