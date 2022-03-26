@@ -1,5 +1,10 @@
 *
-
+!.local/
+!.local/share/
+!.local/share/bash-completion/
+!.local/share/bash-completion/
+!.local/share/bash-completion/completions/
+!.local/share/bash-completion/completions/*
 !.gitconfig
 !.gitignore
 !.vimrc
