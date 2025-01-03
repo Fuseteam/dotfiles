@@ -50,12 +50,12 @@ esac
 
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-        # We have color support; assume it's compliant with Ecma-48
-        # (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-        # a case would tend to support setf rather than setaf.)
-        color_prompt=yes
+	# We have color support; assume it's compliant with Ecma-48
+	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
+	# a case would tend to support setf rather than setaf.)
+	color_prompt=yes
     else
-        color_prompt=
+	color_prompt=
     fi
 fi
 
@@ -118,9 +118,7 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-export PATH=/home/tk/.scripts/crossbuilder:$PATH:/home/tk/Applications
 export PS1=" \t [ \u@\h \W ] \\$\$?> :\[$(tput sgr0)\]"
-export LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libgtk3-nocsd.so.0
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
-[ -r /home/tk/.byobu/prompt ] && . /home/tk/.byobu/prompt   #byobu-prompt#
+[ -r $HOME/.config/byobu/prompt ] && . $HOME/.config/byobu/prompt   #byobu-prompt#
+. "$HOME/.cargo/env"

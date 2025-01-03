@@ -18,4 +18,3 @@
     program = gpg 
 [tag]
     gpgSign = true
-

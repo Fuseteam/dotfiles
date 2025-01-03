@@ -8,8 +8,9 @@
 " This line should not be removed as it ensures that various options are
 " properly set to work with the Vim-related packages available in Debian.
 runtime! debian.vim
-
-set rtp+=~/.vim/bundle/Vundle.vim
+runtime! defaults.vim
+set rtp+=~/.local/share/vim/bundle/Vundle.vim
+call vundle#rc("~/.local/share/vim/bundle")
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'peterhoeg/vim-qml'
@@ -50,8 +51,6 @@ set background=dark
 set encoding=utf-8
 set fileencoding=utf-8
 
-" start in insertmode for git commit messages
-autocmd FileType gitcommit startinsert!
 " Uncomment the following to have Vim jump to the last position when
 " reopening a file
 "if has("autocmd")
@@ -63,7 +62,12 @@ autocmd FileType gitcommit startinsert!
 "if has("autocmd")
 	"filetype plugin indent on
 "endif
-
+" However, in Git commit messages, let’s make it 72 characters
+autocmd FileType gitcommit set textwidth=80
+autocmd FileType gitcommit set colorcolumn=80
+autocmd FileType gitcommit startinsert!
+autocmd VimEnter TAG_EDITMSG execute ':r!git log $(git describe --tags --abbrev=0)...@ --pretty=format:"\%s"'|normal ggO
+autocmd VimEnter TAG_EDITMSG startinsert!
 " The following are commented out as they cause vim to behave a lot
 " differently from regular Vi. They are highly recommended though.
 "set showcmd		" Show (partial) command in status line.
@@ -76,8 +80,8 @@ autocmd FileType gitcommit startinsert!
 "set mouse=a		" Enable mouse usage (all modes)
 
 " Source a global configuration file if available
-if filereadable("/etc/vim/vimrc.local")
-	source /etc/vim/vimrc.local
+if filereadable("/etc/vim/vimrc")
+	source /etc/vim/vimrc
 endif
 set number
 set relativenumber
@@ -146,22 +150,22 @@ nnoremap + :bn<CR>
 "change to working directory
 command! Cwd cd %:p:h
 "functions to strip strings and numbers
-function! s:chop(string, char)
-    return substitute(a:string, a:char, '', '')
-endfunction
-function! s:chopnumbers(string)
-    return substitute(a:string, '\d*', '', 'g')
-endfunction
-"windows management commands
-function! s:winman(...)
+"windows switching commands
+function! s:winswitch(...)
 	let i = 0
 	for arg in a:000
 		if arg =~ '[A-Za-z_|=]' && arg !~ '[^A-Za-z_|=]'
 			let command = ":wincmd ".arg
 			execute command
-		elseif arg =~'[1-9>+<-]' && s:chopnumbers(arg) != ''
                         let command = ":".s:chop(arg, s:chopnumbers(arg))."wincmd ".s:chopnumbers(arg)
                         execute command
+		elseif arg =~'[1-9+-]'
+			let command = ":resize ".arg
+			execute command
+		"elseif arg =~'[1-9+-v]' && arg !~ '[^1-9+-v]'
+			"let command = ":vertical resize ".arg
+			"echo command
+			"execute command
 		endif
 		let i = i + 1
 	endfor
@@ -176,8 +180,7 @@ function! s:cuross()
 	execute command
 endfunction
 
-command! -nargs=+ W call s:winman(<f-args>)
-
+command! -nargs=+ W call s:winswitch(<f-args>)
 command! Tr :execute ':silent r !sudo cat %' |1d
 command! Tw :execute ':silent w !sudo tee %' |edit!
 command! Tq :execute ':silent w !sudo tee %' |quit!
@@ -211,6 +214,8 @@ let g:vcool_ins_rgba_map = '<C-W>'
 au FileType netrw setl bufhidden=wipe
 au BufReadPost *.lib set syntax=php
 au BufReadPost *.php set ft=html|set syntax=php
+"vim term settings vim 8+
+"set termkey=<CR>
 "configuration for ranger and youcompleteme
 "let g:ranger_replace_netrw = 1 " open ranger when vim open a directory
 "let g:ycm_key_list_select_completion=['<C-J>','<Down>']
