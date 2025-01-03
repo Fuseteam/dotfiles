@@ -1,1 +1,3 @@
-. /usr/share/byobu/profiles/bashrc  #byobu-prompt#
+[ -r /usr/share/byobu/profiles/bashrc ] && . /usr/share/byobu/profiles/bashrc  #byobu-prompt#
+
+[ -r $HOME/.local/share/crackle/byobu/usr/share/byobu/profiles/bashrc ] && . $HOME/.local/share/crackle/byobu/usr/share/byobu/profiles/bashrc  #byobu-prompt#

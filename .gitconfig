@@ -1,7 +1,7 @@
 [user]
 	email = fuseteam@duck.com
 	name = Rahammetoela Toekiman
-        signingKey = ACD083CB585C9AA9
+    signingKey = ACD083CB585C9AA9
 [core]
         editor = vim
 [merge]

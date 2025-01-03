@@ -50,6 +50,7 @@ set background=dark
 " set utf-8 as the default encoding
 set encoding=utf-8
 set fileencoding=utf-8
+set tabstop=4
 
 " Uncomment the following to have Vim jump to the last position when
 " reopening a file
@@ -80,9 +81,6 @@ autocmd VimEnter TAG_EDITMSG startinsert!
 "set mouse=a		" Enable mouse usage (all modes)
 
 " Source a global configuration file if available
-if filereadable("/etc/vim/vimrc")
-	source /etc/vim/vimrc
-endif
 set number
 set relativenumber
 set autoindent
@@ -149,7 +147,6 @@ nnoremap + :bn<CR>
 
 "change to working directory
 command! Cwd cd %:p:h
-"functions to strip strings and numbers
 "windows switching commands
 function! s:winswitch(...)
 	let i = 0
@@ -157,8 +154,6 @@ function! s:winswitch(...)
 		if arg =~ '[A-Za-z_|=]' && arg !~ '[^A-Za-z_|=]'
 			let command = ":wincmd ".arg
 			execute command
-                        let command = ":".s:chop(arg, s:chopnumbers(arg))."wincmd ".s:chopnumbers(arg)
-                        execute command
 		elseif arg =~'[1-9+-]'
 			let command = ":resize ".arg
 			execute command
