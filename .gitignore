@@ -8,8 +8,10 @@
 !.gitconfig
 !.gitignore
 !.vimrc
-!.vim/
-!.vim/repos
+!.local/share/vim/
+!.local/share/vim/bundle/
+!.local/share/vim/bundle/*
+!.local/share/vim/repos
 !.byobu/
 !.byobu/*
 !.bash_aliases
