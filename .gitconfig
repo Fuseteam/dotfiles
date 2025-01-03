@@ -1,6 +1,9 @@
 [user]
-	email = fusekai@outlook.com
-	name = Fuseteam
+	email = fuseteam@duck.com
+	name = Rahammetoela Toekiman
+        signingKey = ACD083CB585C9AA9
+[core]
+        editor = vim
 [merge]
 	tool = vimdiff
 [diff]
@@ -9,3 +12,10 @@
 	prompt = false
 [alias]
 	d = difftool
+[commit]
+    gpgSign = true
+[gpg]
+    program = gpg 
+[tag]
+    gpgSign = true
+
