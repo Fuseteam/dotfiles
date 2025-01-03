@@ -10,8 +10,6 @@
 !.vimrc
 !.vim/
 !.vim/repos
-!.vim/bundle/
-!.vim/bundle/*
 !.byobu/
 !.byobu/*
 !.bash_aliases
